@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import TrustSection from '../components/TrustSection';
+import ProductDemo from '../components/ProductDemo';
+import Problem from '../components/Problem';
+import Solution from '../components/Solution';
+import Proof from '../components/Proof';
+import Features from '../components/Features';
+import Pricing from '../components/Pricing';
+import FinalCTA from '../components/FinalCTA';
+import FAQ from '../components/FAQ';
+import Footer from '../components/Footer';
+---
+
+<Layout title="RankSync - One-click AI SEO">
+  <main>
+    <Hero client:load />
+    <TrustSection />
+    <ProductDemo client:visible />
+    <Problem />
+    <Solution />
+    <Proof />
+    <Features />
+    <Pricing client:visible />
+    <FinalCTA />
+    <FAQ client:visible />
+    <Footer />
+  </main>
+</Layout>
