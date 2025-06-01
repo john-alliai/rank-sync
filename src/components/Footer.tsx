@@ -15,9 +15,11 @@ const Footer = () => {
           <div className="text-sm text-gray-400">
             © 2025 RankSync
           </div>
-          <div className="flex space-x-6 text-sm">
+          <div className="flex items-center text-sm">
             <a href="#" className="text-gray-400 hover:text-electric-cyan transition-colors">Privacy</a>
+            <span className="mx-2 text-gray-400">•</span>
             <a href="#" className="text-gray-400 hover:text-electric-cyan transition-colors">Terms</a>
+            <span className="mx-2 text-gray-400">•</span>
             <a href="#" className="text-gray-400 hover:text-electric-cyan transition-colors">Contact</a>
           </div>
         </div>
