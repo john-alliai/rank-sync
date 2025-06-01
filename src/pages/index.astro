@@ -15,16 +15,24 @@ import Footer from '../components/Footer';
 
 <Layout title="RankSync - One-click AI SEO">
   <main>
-    <Hero client:load />
+    <div id="home">
+      <Hero client:load />
+    </div>
     <TrustSection />
     <ProductDemo client:visible />
     <Problem />
     <Solution />
     <Proof />
-    <Features />
-    <Pricing client:visible />
+    <div id="features">
+      <Features />
+    </div>
+    <div id="pricing">
+      <Pricing client:visible />
+    </div>
     <FinalCTA />
-    <FAQ client:visible />
-    <Footer />
+    <div id="faq">
+      <FAQ client:visible />
+    </div>
+    <Footer client:load />
   </main>
 </Layout>

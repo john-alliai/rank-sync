@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header';
+
 interface Props {
   title: string;
   description?: string;
@@ -25,6 +27,7 @@ const { title, description = "RankSync - One-click AI SEO for Duda, Shoplazza & 
     </style>
   </head>
   <body>
+    <Header client:load />
     <slot />
   </body>
 </html>
