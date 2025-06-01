@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { fadeIn, stagger } from '../utils/animations';
+import React, { useState, useRef, useEffect } from 'react';
 
 const faqs = [
   {
@@ -19,60 +17,47 @@ const faqs = [
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+  
   return (
     <section className="py-20 bg-dark-surface">
-      <motion.div 
-        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={stagger}
-      >
-        <motion.h2 
-          className="text-3xl font-bold text-center mb-12 text-white"
-          variants={fadeIn}
-        >
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">
           FAQ
-        </motion.h2>
+        </h2>
         
-        <motion.div 
-          className="space-y-4"
-          variants={stagger}
-        >
-          {faqs.map((faq, index) => (
-            <motion.div 
-              key={index}
-              className="border border-gray-800 rounded-xl overflow-hidden"
-              variants={fadeIn}
-            >
-              <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-dark/50 transition-colors text-white"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            
+            return (
+              <div 
+                key={index}
+                className="border border-gray-800 rounded-xl overflow-hidden"
               >
-                <span className="font-medium">{faq.question}</span>
-                <span className="text-electric-cyan">
-                  {openIndex === index ? '−' : '+'}
-                </span>
-              </button>
-              
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ maxHeight: 0, opacity: 0 }}
-                    animate={{ maxHeight: 500, opacity: 1 }}
-                    exit={{ maxHeight: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 py-4 text-gray-400 bg-dark/25"
-                  >
-                    {faq.answer}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+                <button
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-dark/50 transition-colors duration-200 text-white"
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                >
+                  <span className="font-medium">{faq.question}</span>
+                  <span className="text-electric-cyan transition-transform duration-200 ease-in-out">
+                    {isOpen ? '−' : '+'}
+                  </span>
+                </button>
+                
+                <div 
+                  className={`grid transition-all duration-200 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 py-4 text-gray-400 bg-dark/25">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 };

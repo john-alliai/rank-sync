@@ -4,7 +4,7 @@ import { fadeIn, stagger } from '../utils/animations';
 
 const Hero = () => {
   return (
-    <section className="bg-dark text-white py-20 py-40">
+    <section className="bg-dark text-white py-40">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         initial="initial"
