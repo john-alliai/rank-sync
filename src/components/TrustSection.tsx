@@ -16,7 +16,7 @@ const TrustSection = () => {
             className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6"
             variants={fadeIn}
           >
-            <span className="text-gray-400">Powered by the Alli AI engine</span>
+            <span className="text-gray-400">Trusted by Small Businesses</span>
             {/* Placeholder for beta store logos */}
             <div className="flex space-x-6 opacity-50">
               {/* Add your store logos here */}
