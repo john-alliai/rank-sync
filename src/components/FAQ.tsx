@@ -59,9 +59,9 @@ const FAQ = () => {
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
+                    initial={{ maxHeight: 0, opacity: 0 }}
+                    animate={{ maxHeight: 500, opacity: 1 }}
+                    exit={{ maxHeight: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                     className="px-6 py-4 text-gray-400 bg-dark/25"
                   >
