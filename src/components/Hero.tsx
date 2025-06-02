@@ -1,12 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Squares } from "./ui/squares-background";
 import { fadeIn, stagger } from '../utils/animations';
 
 const Hero = () => {
   return (
-    <section className="bg-dark text-white py-40">
+    <section className="bg-dark text-white py-40 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Squares borderColor="#444" />
+      </div>
       <motion.div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         initial="initial"
         animate="animate"
         variants={stagger}
