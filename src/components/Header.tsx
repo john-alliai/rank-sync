@@ -39,6 +39,7 @@ const Header = () => {
             <a href="#features" className="text-gray-300 hover:text-electric-cyan transition-colors">Features</a>
             <a href="#pricing" className="text-gray-300 hover:text-electric-cyan transition-colors">Pricing</a>
             <a href="#faq" className="text-gray-300 hover:text-electric-cyan transition-colors">FAQ</a>
+            <a href="/duda" className="text-gray-300 hover:text-electric-cyan transition-colors font-semibold">Duda</a>
           </motion.nav>
           
           <motion.div 
