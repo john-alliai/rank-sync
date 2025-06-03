@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  primaryButton: {
+    text: string;
+    href?: string;
+  };
+  secondaryButton?: {
+    text: string;
+    href?: string;
+  };
+  background?: 'dark' | 'surface';
+}
+
+const { 
+  title, 
+  subtitle, 
+  primaryButton, 
+  secondaryButton,
+  background = 'dark' 
+} = Astro.props;
+
+const bgClass = background === 'surface' ? 'bg-dark-surface' : 'bg-[#181A20]';
+---
+
+<section class={`py-20 px-4 text-center ${bgClass} border-t border-gray-800`}>
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+      {title}
+    </h2>
+    
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+      <a 
+        href={primaryButton.href || "#"} 
+        class="px-10 py-4 bg-electric-cyan text-dark rounded-xl font-semibold text-lg hover:bg-electric-cyan/90 transition-all transform hover:scale-105"
+      >
+        {primaryButton.text}
+      </a>
+      
+      {secondaryButton && (
+        <a 
+          href={secondaryButton.href || "#"} 
+          class="px-8 py-3 border-2 border-electric-cyan text-electric-cyan rounded-xl font-semibold hover:bg-electric-cyan/10 transition-all"
+        >
+          {secondaryButton.text}
+        </a>
+      )}
+    </div>
+    
+    {subtitle && (
+      <p class="mt-4 text-gray-400">{subtitle}</p>
+    )}
+  </div>
+</section> 

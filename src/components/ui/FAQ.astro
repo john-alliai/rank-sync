@@ -1,0 +1,41 @@
+---
+export interface Props {
+  questions: Array<{question: string; answer: string}>;
+  title?: string;
+}
+
+const { questions, title = "FAQ" } = Astro.props;
+---
+
+<section class="py-20 bg-dark-surface">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-12 text-white">
+      {title}
+    </h2>
+    
+    <div class="space-y-4">
+      {questions.map((faq, index) => (
+        <div class="border border-gray-800 rounded-xl overflow-hidden">
+          <details class="group">
+            <summary class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-dark/50 transition-colors duration-200 text-white cursor-pointer list-none">
+              <span class="font-medium">{faq.question}</span>
+              <span class="text-electric-cyan transition-transform duration-200 ease-in-out group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            
+            <div class="px-6 py-4 text-gray-400 bg-dark/25">
+              {faq.answer}
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details[open] summary span:last-child {
+    transform: rotate(45deg);
+  }
+</style> 
