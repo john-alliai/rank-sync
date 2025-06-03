@@ -1,43 +1,21 @@
 import React from "react";
+import DudaHero from "./duda/DudaHero";
+import DudaTrustBar from "./duda/DudaTrustBar";
+import DudaFAQ from "./DudaFAQ";
+import { dudaFAQs } from "../data/faqs/duda";
+
+export interface DudaFAQProps {
+  faqs: { question: string; answer: string }[];
+}
 
 const DudaPage = () => {
   return (
     <div className="bg-dark text-white min-h-screen">
       {/* Hero Section */}
-      <div className="py-24 px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
-          Optimise every Duda page in one click
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-8">
-          Titles, slugs, schema &amp; indexing—sorted while your coffee's still hot.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <button className="px-8 py-3 bg-electric-cyan text-dark rounded-xl font-semibold hover:bg-electric-cyan/90 transition-all transform hover:scale-105">
-            Start free →
-          </button>
-          <a
-            href="#tour"
-            className="px-8 py-3 border-2 border-electric-cyan text-electric-cyan rounded-xl font-semibold hover:bg-electric-cyan/10 transition-all flex items-center justify-center"
-          >
-            Watch 2‑min tour
-          </a>
-        </div>
-      </div>
+      <DudaHero />
 
       {/* Trust Bar */}
-      <div className="py-6 bg-[#181A20] border-b border-gray-800">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
-          <span className="text-gray-400 text-lg">
-            Used by agencies that build hundreds of Duda sites every month
-          </span>
-          <div className="flex gap-6 mt-2 md:mt-0">
-            <span className="bg-gray-700 rounded px-3 py-1 text-sm font-semibold">AgencyOne</span>
-            <span className="bg-gray-700 rounded px-3 py-1 text-sm font-semibold">PixelForge</span>
-            <span className="bg-gray-700 rounded px-3 py-1 text-sm font-semibold">WebWorks</span>
-            <span className="bg-gray-700 rounded px-3 py-1 text-sm font-semibold">LaunchLab</span>
-          </div>
-        </div>
-      </div>
+      <DudaTrustBar />
 
       {/* SEO Wall Table */}
       <div className="py-16 px-4 max-w-6xl mx-auto">
@@ -165,35 +143,7 @@ const DudaPage = () => {
       </div>
 
       {/* FAQs */}
-      <div className="py-16 px-4 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">FAQs</h2>
-        <div className="space-y-6">
-          <div>
-            <h3 className="font-semibold text-lg">Will RankSync overwrite my custom copy?</h3>
-            <p className="text-gray-300">
-              No. You choose which pages and fields to optimise. Nothing changes until you click <em>Approve</em>.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Does it slow my Duda site down?</h3>
-            <p className="text-gray-300">
-              No. RankSync works via the Duda API and injects lightweight JSON‑LD; no extra scripts run on your site.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">How fast will I see ranking gains?</h3>
-            <p className="text-gray-300">
-              Most users notice improvements in index coverage within days and traffic lifts within 4–6 weeks, depending on competition.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Can I cancel anytime?</h3>
-            <p className="text-gray-300">
-              Yes. There are no contracts and you can downgrade or cancel inside the dashboard.
-            </p>
-          </div>
-        </div>
-      </div>
+      <DudaFAQ faqs={dudaFAQs} />
 
       {/* Final CTA */}
       <div className="py-20 px-4 text-center bg-[#181A20] border-t border-gray-800">
