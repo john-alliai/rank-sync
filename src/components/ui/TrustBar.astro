@@ -1,0 +1,26 @@
+---
+export interface Props {
+  agencies?: string[];
+  message?: string;
+}
+
+const { 
+  agencies = ["AgencyOne", "PixelForge", "WebWorks", "LaunchLab"],
+  message = "Used by agencies that build hundreds of sites every month"
+} = Astro.props;
+---
+
+<div class="py-6 bg-[#181A20] border-b border-gray-800">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
+    <span class="text-gray-400 text-lg">
+      {message}
+    </span>
+    <div class="flex gap-6 mt-2 md:mt-0">
+      {agencies.map((agency) => (
+        <span class="bg-gray-700 rounded px-3 py-1 text-sm font-semibold">
+          {agency}
+        </span>
+      ))}
+    </div>
+  </div>
+</div> 
