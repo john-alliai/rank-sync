@@ -6,27 +6,23 @@ export interface Feature {
 
 export const dudaFeatures: Feature[] = [
   {
-    title: "Bulk Meta Rewrite",
-    description: "AI rewrites every title & description, aligned to keyword intent."
+    title: "One-Click Optimization",
+    description: "AI rewrites meta content across your entire site in seconds",
+    icon: "⚡"
   },
   {
-    title: "Smart Slug Cleaner", 
-    description: "Scans the whole site, suggests clean URLs and auto‑builds 301s."
+    title: "Native Integration", 
+    description: "Works directly in Duda's interface - no extra login needed",
+    icon: "🔌"
   },
   {
-    title: "Schema Injection",
-    description: "Instantly adds Product, FAQ, Local & Article JSON‑LD—no code widgets."
+    title: "Instant Results",
+    description: "See ranking improvements within days of launching",
+    icon: "📈"
   },
   {
-    title: "IndexNow + Google API Push",
-    description: "Pings all major engines the second you hit publish."
-  },
-  {
-    title: "Core Web Vitals Guardrails",
-    description: "Compresses heavy images, lazy‑loads embeds, flags slow widgets."
-  },
-  {
-    title: "Health Dashboard",
-    description: "Real‑language checklist keeps duplicates, cannibals & orphan pages away."
+    title: "Zero Learning Curve",
+    description: "If you can use Duda, you can use RankSync",
+    icon: "✨"
   }
-]; 
+];

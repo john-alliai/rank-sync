@@ -1,0 +1,70 @@
+---
+export interface ComparisonItem {
+  title: string;
+  features: string[];
+  highlight?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  before: ComparisonItem;
+  after: ComparisonItem;
+  background?: 'dark' | 'dark-surface';
+}
+
+const {
+  title = "The RankSync Difference",
+  subtitle = "See how RankSync transforms your Duda workflow",
+  before,
+  after,
+  background = 'dark'
+} = Astro.props;
+---
+
+<section class={`py-20 ${background === 'dark-surface' ? 'bg-dark-surface' : 'bg-dark'}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-4">{title}</h2>
+      {subtitle && <p class="text-gray-400 text-lg">{subtitle}</p>}
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Before Card -->
+      <div class="bg-dark rounded-xl p-8 border border-gray-800">
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold text-gray-400 mb-2">{before.title}</h3>
+          {before.highlight && (
+            <p class="text-gray-500 text-sm">{before.highlight}</p>
+          )}
+        </div>
+        <ul class="space-y-4">
+          {before.features.map(feature => (
+            <li class="flex items-start">
+              <span class="text-red-500 mr-3">✕</span>
+              <span class="text-gray-400">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- After Card -->
+      <div class="bg-dark rounded-xl p-8 border border-electric-cyan">
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold text-white mb-2">{after.title}</h3>
+          {after.highlight && (
+            <p class="text-electric-cyan text-sm">{after.highlight}</p>
+          )}
+        </div>
+        <ul class="space-y-4">
+          {after.features.map(feature => (
+            <li class="flex items-start">
+              <span class="text-electric-cyan mr-3">✓</span>
+              <span class="text-gray-200">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

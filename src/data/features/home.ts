@@ -15,7 +15,7 @@ export const homeFeatures: FeaturesContent = {
   features: [
   {
     title: 'Bulk Meta Rewrite',
-    description: 'AI crafts compelling titles & descriptions site-wide.',
+    description: 'AI crafts compelling titles & descriptions site wide.',
     icon: '📝',
   },
   {

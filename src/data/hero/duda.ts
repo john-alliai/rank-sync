@@ -11,20 +11,15 @@ export interface HeroConfig {
 }
 
 export const dudaHero: HeroConfig = {
-  title: "Optimise every Duda page in one click",
-  subtitle: "Titles, slugs, schema & indexing—sorted while your coffee's still hot.",
+  title: "Launch your Duda site with perfect SEO",
+  subtitle: "One-click optimization that works natively with Duda. Get better rankings from day one.",
   buttons: [
     {
-      text: "Start free →",
+      text: "Start free trial →",
       href: "#signup",
       variant: "primary"
-    },
-    {
-      text: "Watch 2‑min tour",
-      href: "#tour",
-      variant: "secondary"
     }
   ],
   size: "large",
-  background: "dark"
-}; 
+  background: "gradient"
+};
