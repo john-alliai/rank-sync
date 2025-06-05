@@ -1,0 +1,65 @@
+---
+export interface FooterLink {
+  text: string;
+  href: string;
+}
+
+export interface Props {
+  copyright?: string;
+  links?: FooterLink[];
+  background?: 'dark' | 'dark-surface';
+}
+
+const {
+  copyright = '© 2025 RankSync',
+  links = [
+    { text: 'Privacy', href: '#' },
+    { text: 'Terms', href: '#' },
+    { text: 'Contact', href: '#' }
+  ],
+  background = 'dark'
+} = Astro.props;
+
+const bgClass = background === 'dark-surface' ? 'bg-dark-surface' : 'bg-dark';
+---
+
+<footer class={`py-8 ${bgClass}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div class="text-sm text-gray-400">
+        {copyright}
+      </div>
+      <div class="flex items-center text-sm">
+        {links.map((link, index) => (
+          <>
+            {index > 0 && <span class="mx-2 text-gray-400">•</span>}
+            <a 
+              href={link.href} 
+              class="text-gray-400 hover:text-electric-cyan transition-colors"
+            >
+              {link.text}
+            </a>
+          </>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>

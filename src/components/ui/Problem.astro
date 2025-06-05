@@ -1,0 +1,68 @@
+---
+export interface Problem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Props {
+  title?: string;
+  description?: string;
+  problems: Problem[];
+  background?: 'dark' | 'dark-surface';
+}
+
+const {
+  title = "Why DIY SEO Hurts Small Sites",
+  description = "Inefficient manual edits, confusing plugins, and pricey consultants keep indie founders from ranking.",
+  problems,
+  background = 'dark-surface'
+} = Astro.props;
+
+const bgClass = background === 'dark-surface' ? 'bg-dark-surface' : 'bg-dark';
+---
+
+<section class={`py-20 ${bgClass}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="animate-fade-in">
+      <h2 class="text-3xl font-bold text-center mb-12 text-white">
+        {title}
+      </h2>
+      
+      <p class="text-lg text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+        {description}
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {problems.map((problem, index) => (
+          <div 
+            class="text-center animate-fade-in"
+            style={`animation-delay: ${(index + 1) * 100}ms`}
+          >
+            <div class="text-4xl mb-4">{problem.icon}</div>
+            <h3 class="text-xl font-semibold mb-2 text-white">{problem.title}</h3>
+            <p class="text-gray-400">{problem.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>

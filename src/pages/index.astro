@@ -1,36 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
-import TrustSection from '../components/TrustSection';
-import ProductDemo from '../components/ProductDemo';
-import Problem from '../components/Problem';
-import Solution from '../components/Solution';
-import Proof from '../components/Proof';
-import Features from '../components/Features';
-import Pricing from '../components/Pricing';
-import FinalCTA from '../components/FinalCTA';
-import FAQ from '../components/FAQ';
+import Hero from '../components/ui/Hero.astro';
+import TrustSection from '../components/ui/TrustSection.astro';
+import ProductDemo from '../components/ui/ProductDemo.astro';
+import Problem from '../components/ui/Problem.astro';
+import Solution from '../components/ui/Solution.astro';
+import Proof from '../components/ui/Proof.astro';
+import Features from '../components/ui/Features.astro';
+import Pricing from '../components/ui/Pricing.astro';
+import FinalCTA from '../components/ui/FinalCTA.astro';
+import FAQ from '../components/ui/FAQ.astro';
+
+// Import data
+import { homeHero } from '../data/hero/home';
+import { homeTrustBar } from '../data/trust-bar/home';
+import { homeProductDemo } from '../data/product-demo/home';
+import { homeProblem } from '../data/problem/home';
+import { homeSolution } from '../data/solution/home';
+import { homeProof } from '../data/proof/home';
+import { homeFeatures } from '../data/features/home';
+import { homePricing } from '../data/pricing/home';
+import { homeFinalCTA } from '../data/cta/home';
+import { homeFAQs } from '../data/faqs/home';
 ---
 
 <Layout title="RankSync - One-click AI SEO">
   <main>
     <div id="home">
-      <Hero client:load />
+      <Hero {...homeHero} />
     </div>
-    <TrustSection client:load />
-    <ProductDemo client:visible />
-    <Problem client:load />
-    <Solution client:load />
-    <Proof client:load />
+    <TrustSection {...homeTrustBar} />
+    <ProductDemo {...homeProductDemo} />
+    <Problem {...homeProblem} />
+    <Solution {...homeSolution} />
+    <Proof {...homeProof} />
     <div id="features">
-      <Features client:load />
+      <Features {...homeFeatures} />
     </div>
     <div id="pricing">
-      <Pricing client:visible />
+      <Pricing {...homePricing} />
     </div>
-    <FinalCTA client:load />
+    <FinalCTA {...homeFinalCTA} />
     <div id="faq">
-      <FAQ client:visible />
+      <FAQ questions={homeFAQs} />
     </div>
   </main>
 </Layout>

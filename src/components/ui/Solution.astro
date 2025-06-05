@@ -1,0 +1,46 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  background?: 'dark' | 'dark-surface';
+}
+
+const {
+  title = "RankSync in One Line",
+  description = "Fast, affordable bulk SEO that feels native to your CMS. No code, no plugin soup—just click once and watch pages get search-ready.",
+  background = 'dark'
+} = Astro.props;
+
+const bgClass = background === 'dark-surface' ? 'bg-dark-surface' : 'bg-dark';
+---
+
+<section class={`py-20 ${bgClass}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center animate-fade-in">
+      <h2 class="text-3xl font-bold mb-6 text-white">
+        {title}
+      </h2>
+      <p class="text-xl leading-relaxed text-gray-300">
+        {description}
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>
