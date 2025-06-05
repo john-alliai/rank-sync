@@ -1,0 +1,76 @@
+---
+// 1. Imports
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/ui/Hero.astro";
+import ProductDemo from "../components/ui/ProductDemo.astro";
+import ComparisonCards from "../components/ui/ComparisonCards.astro";
+import Features from "../components/ui/Features.astro";
+import FAQ from "../components/ui/FAQ.astro";
+import FinalCTA from "../components/ui/FinalCTA.astro";
+
+// 2. Data imports
+import { prestashopHero } from "../data/hero/prestashop";
+import { prestashopFeatures } from "../data/features/prestashop";
+import { prestashopComparison } from "../data/comparison/prestashop";
+import { prestashopFAQs } from "../data/faqs/prestashop";
+---
+
+<Layout title="RankSync for PrestaShop – SEO That Launches With You">
+  <div class="bg-dark text-white min-h-screen">
+    <!-- Hero Section (gradient) -->
+    <Hero 
+      title={prestashopHero.title}
+      subtitle={prestashopHero.subtitle}
+      buttons={[prestashopHero.buttons[0]]}
+      size="large"
+      background="gradient"
+    />
+    
+    <!-- Product Demo (dark-surface) -->
+    <ProductDemo
+      title="See RankSync working inside PrestaShop"
+      description="Watch RankSync rewrite 500+ product URLs and meta tags with one click"
+      background="dark-surface"
+    />
+
+    <!-- Comparison Section (dark) -->
+    <ComparisonCards
+      title="Transform Your PrestaShop SEO Workflow"
+      subtitle="See the difference RankSync makes"
+      before={prestashopComparison.before}
+      after={prestashopComparison.after}
+      background="dark"
+    />
+
+    <!-- Features Section (dark-surface) -->
+    <Features 
+      features={prestashopFeatures}
+      background="dark-surface"
+    />
+    
+    <!-- FAQs (dark) -->
+    <FAQ 
+      questions={prestashopFAQs.slice(0,3)} 
+      title="Common Questions"
+      background="dark"
+    />
+
+    <!-- Final CTA (dark-surface) -->
+    <FinalCTA 
+      title="Stop wrestling with SEO modules—let RankSync handle it for you"
+      buttons={[
+        {
+          text: "Start free trial",
+          href: "#signup",
+          variant: "primary"
+        },
+        {
+          text: "Talk to Us",
+          href: "#contact",
+          variant: "secondary"
+        }
+      ]}
+      background="dark-surface"
+    />
+  </div>
+</Layout>

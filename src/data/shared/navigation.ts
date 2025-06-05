@@ -23,7 +23,9 @@ export const sharedNavigation: SharedNavigation = {
       { text: 'Features', href: '#features' },
       { text: 'Pricing', href: '#pricing' },
       { text: 'FAQ', href: '#faq' },
-      { text: 'Duda', href: '/duda' }
+      { text: 'Duda', href: '/duda' },
+      { text: 'Shoplazza', href: '/shoplazza' },
+      { text: 'PrestaShop', href: '/prestashop' }
     ],
     ctaButton: {
       text: 'Start Free Trial',
