@@ -1,0 +1,76 @@
+---
+// 1. Imports
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/ui/Hero.astro";
+import ProductDemo from "../components/ui/ProductDemo.astro";
+import ComparisonCards from "../components/ui/ComparisonCards.astro";
+import Features from "../components/ui/Features.astro";
+import FAQ from "../components/ui/FAQ.astro";
+import FinalCTA from "../components/ui/FinalCTA.astro";
+
+// 2. Data imports
+import { shoplazzaHero } from "../data/hero/shoplazza";
+import { shoplazzaFeatures } from "../data/features/shoplazza";
+import { shoplazzaComparison } from "../data/comparison/shoplazza";
+import { shoplazzaFAQs } from "../data/faqs/shoplazza";
+---
+
+<Layout title="RankSync for Shoplazza – SEO That Launches With You">
+  <div class="bg-dark text-white min-h-screen">
+    <!-- Hero Section (gradient) -->
+    <Hero 
+      title={shoplazzaHero.title}
+      subtitle={shoplazzaHero.subtitle}
+      buttons={[shoplazzaHero.buttons[0]]}
+      size="large"
+      background="gradient"
+    />
+    
+    <!-- Product Demo (dark-surface) -->
+    <ProductDemo
+      title="See how RankSync works with Shoplazza"
+      description="Watch RankSync bulk‑optimize every product & collection in one click"
+      background="dark-surface"
+    />
+
+    <!-- Comparison Section (dark) -->
+    <ComparisonCards
+      title="Transform Your Shoplazza SEO Workflow"
+      subtitle="See the difference RankSync makes"
+      before={shoplazzaComparison.before}
+      after={shoplazzaComparison.after}
+      background="dark"
+    />
+
+    <!-- Features Section (dark-surface) -->
+    <Features 
+      features={shoplazzaFeatures}
+      background="dark-surface"
+    />
+    
+    <!-- FAQs (dark) -->
+    <FAQ 
+      questions={shoplazzaFAQs.slice(0,3)} 
+      title="Common Questions"
+      background="dark"
+    />
+
+    <!-- Final CTA (dark-surface) -->
+    <FinalCTA 
+      title="Never miss another sale due to unoptimized product pages"
+      buttons={[
+        {
+          text: "Start free trial",
+          href: "#signup",
+          variant: "primary"
+        },
+        {
+          text: "Talk to Us",
+          href: "#contact",
+          variant: "secondary"
+        }
+      ]}
+      background="dark-surface"
+    />
+  </div>
+</Layout>
