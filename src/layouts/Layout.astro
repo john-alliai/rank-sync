@@ -1,6 +1,7 @@
 ---
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+import { sharedNavigation } from '../data/shared/navigation';
 
 interface Props {
   title: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const { title, description = "RankSync - One-click AI SEO for Duda, Shoplazza & PrestaShop" } = Astro.props;
+const { header, footer } = sharedNavigation;
 ---
 
 <!DOCTYPE html>
@@ -28,8 +30,15 @@ const { title, description = "RankSync - One-click AI SEO for Duda, Shoplazza & 
     </style>
   </head>
   <body>
-    <Header client:load />
+    <Header 
+      logo={header.logo}
+      links={header.links}
+      ctaButton={header.ctaButton}
+    />
     <slot />
-    <Footer client:load />
+    <Footer 
+      copyright={footer.copyright}
+      links={footer.links}
+    />
   </body>
 </html>

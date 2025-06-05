@@ -33,7 +33,7 @@ const titleSizeClass = size === 'large'
 
 <section class={`${bgClass} text-white ${paddingClass}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
+    <div class="text-center animate-fade-in">
       <h1 class={`${titleSizeClass} font-extrabold tracking-tight mb-4`}>
         {title}
       </h1>
@@ -62,4 +62,21 @@ const titleSizeClass = size === 'large'
       )}
     </div>
   </div>
-</section> 
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+</style>
