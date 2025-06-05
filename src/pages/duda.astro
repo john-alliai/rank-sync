@@ -6,7 +6,7 @@ import ProductDemo from "../components/ui/ProductDemo.astro";
 import ComparisonCards from "../components/ui/ComparisonCards.astro";
 import Features from "../components/ui/Features.astro";
 import FAQ from "../components/ui/FAQ.astro";
-import CTA from "../components/ui/CTA.astro";
+import FinalCTA from "../components/ui/FinalCTA.astro";
 
 // 2. Data imports
 import { dudaHero } from "../data/hero/duda";
@@ -56,13 +56,20 @@ import { dudaFAQs } from "../data/faqs/duda";
     />
 
     <!-- Final CTA (dark-surface) -->
-    <CTA 
-      title="Start optimizing your Duda site today"
-      subtitle="Free 14-day trial • No credit card required"
-      primaryButton={{
-        text: "Start free trial →",
-        href: "#signup"
-      }}
+    <FinalCTA 
+      title="Never lose traffic again due to unoptimised pages."
+      buttons={[
+        {
+          text: "Start free trial",
+          href: "#signup",
+          variant: "primary"
+        },
+        {
+          text: "Talk to Us",
+          href: "#contact",
+          variant: "secondary"
+        }
+      ]}
       background="dark-surface"
     />
   </div>

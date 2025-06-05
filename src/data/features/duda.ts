@@ -6,7 +6,7 @@ export interface Feature {
 
 export const dudaFeatures: Feature[] = [
   {
-    title: "One-Click Optimization",
+    title: "One Click Optimization",
     description: "AI rewrites meta content across your entire site in seconds",
     icon: "⚡"
   },

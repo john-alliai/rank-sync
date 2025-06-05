@@ -22,7 +22,7 @@ import { homeFinalCTA } from '../data/cta/home';
 import { homeFAQs } from '../data/faqs/home';
 ---
 
-<Layout title="RankSync - One-click AI SEO">
+<Layout title="RankSync - One click AI SEO">
   <main>
     <div id="home" class="bg-gradient-to-br from-dark to-dark-surface">
       <Hero {...homeHero} />
@@ -51,13 +51,14 @@ import { homeFAQs } from '../data/faqs/home';
     <div id="pricing" class="bg-dark">
       <Pricing {...homePricing} />
     </div>
+
+    <div id="faq" class="bg-dark">
+      <FAQ questions={homeFAQs} />
+    </div>
     
     <div class="bg-dark-surface">
       <FinalCTA {...homeFinalCTA} />
     </div>
     
-    <div id="faq" class="bg-dark">
-      <FAQ questions={homeFAQs} />
-    </div>
   </main>
 </Layout>
