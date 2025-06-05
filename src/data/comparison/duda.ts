@@ -25,7 +25,7 @@ export const dudaComparison: ComparisonData = {
   },
   after: {
     title: "Duda + RankSync",
-    highlight: "One-click optimization in minutes",
+    highlight: "One click optimization in minutes",
     features: [
       "Bulk meta tag optimization with AI",
       "Smart URL cleanup across your site",

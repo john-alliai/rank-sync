@@ -13,7 +13,7 @@ export interface HeroContent {
 }
 
 export const homeHero: HeroContent = {
-  title: "One-click AI SEO that launches with your site",
+  title: "One click AI SEO that launches with your site",
   subtitle: "Stop losing traffic to unoptimised pages. RankSync auto optimises your content as you build, so every page launches ready to rank.",
   buttons: [
     {
