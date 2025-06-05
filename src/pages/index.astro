@@ -5,7 +5,6 @@ import TrustSection from '../components/ui/TrustSection.astro';
 import ProductDemo from '../components/ui/ProductDemo.astro';
 import Problem from '../components/ui/Problem.astro';
 import Solution from '../components/ui/Solution.astro';
-import Proof from '../components/ui/Proof.astro';
 import Features from '../components/ui/Features.astro';
 import Pricing from '../components/ui/Pricing.astro';
 import FinalCTA from '../components/ui/FinalCTA.astro';
@@ -17,7 +16,6 @@ import { homeTrustBar } from '../data/trust-bar/home';
 import { homeProductDemo } from '../data/product-demo/home';
 import { homeProblem } from '../data/problem/home';
 import { homeSolution } from '../data/solution/home';
-import { homeProof } from '../data/proof/home';
 import { homeFeatures } from '../data/features/home';
 import { homePricing } from '../data/pricing/home';
 import { homeFinalCTA } from '../data/cta/home';
@@ -26,22 +24,39 @@ import { homeFAQs } from '../data/faqs/home';
 
 <Layout title="RankSync - One-click AI SEO">
   <main>
-    <div id="home">
+    <div id="home" class="bg-gradient-to-br from-dark to-dark-surface">
       <Hero {...homeHero} />
     </div>
-    <TrustSection {...homeTrustBar} />
-    <ProductDemo {...homeProductDemo} />
-    <Problem {...homeProblem} />
-    <Solution {...homeSolution} />
-    <Proof {...homeProof} />
-    <div id="features">
+    
+    <div class="bg-dark-surface">
+      <TrustSection {...homeTrustBar} />
+    </div>
+    
+    <div class="bg-dark">
+      <ProductDemo {...homeProductDemo} />
+    </div>
+    
+    <div class="bg-dark-surface">
+      <Problem {...homeProblem} />
+    </div>
+    
+    <div class="bg-dark">
+      <Solution {...homeSolution} />
+    </div>
+    
+    <div id="features" class="bg-dark-surface">
       <Features {...homeFeatures} />
     </div>
-    <div id="pricing">
+    
+    <div id="pricing" class="bg-dark">
       <Pricing {...homePricing} />
     </div>
-    <FinalCTA {...homeFinalCTA} />
-    <div id="faq">
+    
+    <div class="bg-dark-surface">
+      <FinalCTA {...homeFinalCTA} />
+    </div>
+    
+    <div id="faq" class="bg-dark">
       <FAQ questions={homeFAQs} />
     </div>
   </main>

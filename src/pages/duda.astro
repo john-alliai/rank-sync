@@ -2,89 +2,68 @@
 // 1. Imports
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/ui/Hero.astro";
-import TrustBar from "../components/ui/TrustBar.astro";
-import SEOWall from "../components/ui/SEOWall.astro";
-import FeaturesList from "../components/ui/FeaturesList.astro";
-import HowItWorks from "../components/ui/HowItWorks.astro";
-import CaseStudy from "../components/ui/CaseStudy.astro";
+import ProductDemo from "../components/ui/ProductDemo.astro";
+import ComparisonCards from "../components/ui/ComparisonCards.astro";
+import Features from "../components/ui/Features.astro";
 import FAQ from "../components/ui/FAQ.astro";
 import CTA from "../components/ui/CTA.astro";
 
 // 2. Data imports
 import { dudaHero } from "../data/hero/duda";
 import { dudaFeatures } from "../data/features/duda";
-import { dudaTrustBar } from "../data/trust-bar/duda";
-import { dudaSEOWall } from "../data/seo-wall/duda";
-import { dudaHowItWorks } from "../data/how-it-works/duda";
-import { dudaCaseStudy } from "../data/case-studies/duda";
+import { dudaComparison } from "../data/comparison/duda";
 import { dudaFAQs } from "../data/faqs/duda";
 ---
 
 <Layout title="RankSync for Duda – SEO That Launches With You">
   <div class="bg-dark text-white min-h-screen">
-    <!-- Hero Section -->
+    <!-- Hero Section (gradient) -->
     <Hero 
       title={dudaHero.title}
       subtitle={dudaHero.subtitle}
-      buttons={dudaHero.buttons}
-      size={dudaHero.size}
-    />
-
-    <!-- Trust Bar -->
-    <TrustBar 
-      agencies={dudaTrustBar.agencies}
-      message={dudaTrustBar.message}
-    />
-
-    <!-- SEO Wall Table -->
-    <SEOWall 
-      title={dudaSEOWall.title}
-      roadblocks={dudaSEOWall.roadblocks}
-    />
-
-    <!-- Features Section -->
-    <FeaturesList 
-      title="Meet RankSync – AI SEO that plugs straight into Duda"
-      subtitle="One‑click optimisation. Zero copy‑paste."
-      features={dudaFeatures}
-      layout="list"
-      columns={2}
+      buttons={[dudaHero.buttons[0]]}
+      size="large"
+      background="gradient"
     />
     
-    <div class="text-center mt-8 pb-8">
-      <p class="text-gray-400">
-        Everything is included in the{" "}
-        <span class="font-semibold text-white">$29/mo Starter plan</span>—no add‑ons, no page‑count fees.
-      </p>
-    </div>
-
-    <!-- How it Works -->
-    <HowItWorks 
-      title={dudaHowItWorks.title}
-      steps={dudaHowItWorks.steps}
-      highlight={dudaHowItWorks.highlight}
+    <!-- Product Demo (dark-surface) -->
+    <ProductDemo
+      title="See how RankSync works with Duda"
+      description="Watch how RankSync optimizes your Duda site in one click"
+      background="dark-surface"
     />
 
-    <!-- Results / Case Study -->
-    <CaseStudy 
-      title={dudaCaseStudy.title}
-      quote={dudaCaseStudy.quote}
-      author={dudaCaseStudy.author}
-      ctaText={dudaCaseStudy.ctaText}
-      ctaLink={dudaCaseStudy.ctaLink}
+    <!-- Comparison Section (dark) -->
+    <ComparisonCards
+      title="Transform Your Duda SEO Workflow"
+      subtitle="See the difference RankSync makes"
+      before={dudaComparison.before}
+      after={dudaComparison.after}
+      background="dark"
     />
 
-    <!-- FAQs -->
-    <FAQ questions={dudaFAQs} title="Duda + RankSync FAQ" />
+    <!-- Features Section (dark-surface) -->
+    <Features 
+      features={dudaFeatures}
+      background="dark-surface"
+    />
+    
+    <!-- FAQs (dark) -->
+    <FAQ 
+      questions={dudaFAQs.slice(0,3)} 
+      title="Common Questions"
+      background="dark"
+    />
 
-    <!-- Final CTA -->
+    <!-- Final CTA (dark-surface) -->
     <CTA 
-      title="Start your free optimisation audit now"
-      subtitle="5‑minute setup • No credit card required"
+      title="Start optimizing your Duda site today"
+      subtitle="Free 14-day trial • No credit card required"
       primaryButton={{
-        text: "Get started free →",
+        text: "Start free trial →",
         href: "#signup"
       }}
+      background="dark-surface"
     />
   </div>
 </Layout>

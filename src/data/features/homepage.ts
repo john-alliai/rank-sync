@@ -7,7 +7,7 @@ export interface Feature {
 export const homepageFeatures: Feature[] = [
   {
     title: 'Bulk Meta Rewrite',
-    description: 'AI crafts compelling titles & descriptions site-wide.',
+    description: 'AI crafts compelling titles & descriptions site wide.',
     icon: '📝',
   },
   {
